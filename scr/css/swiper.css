@@ -1,0 +1,42 @@
+swiper-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+
+  swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  
+
+  swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+  }
+  .swiper{
+    height: 450px;
+    width: 900px;
+    display: flex;
+    margin: auto;
+    position: relative;
+  }
+  .swiper img{
+    border-radius: 5px;
+    height: 400px;
+    width: 900px;
+    position: relative;
+  }
+  #mainslide{
+    width: 500px;
+    height: 400px;
+    position: relative;
+  }

@@ -1,0 +1,115 @@
+:root{
+    --white-color: #fff;
+    --black-color: #000;
+    --text-color: #333;
+}
+
+*{
+    box-sizing: inherit;
+}
+
+html{
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    height: 100%;              /* để body cao đủ 100% */
+}
+
+/* BODY dùng flex để đẩy footer xuống đáy */
+body{
+    position: relative;
+    min-height: 100vh;         /* cao ít nhất bằng chiều cao màn hình */
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+h1{
+    font-size: 3rem;
+    /* background: #32cd32; */
+    height: 4rem;
+    line-height: 4rem;
+    color: #FFF;
+}
+
+p{
+    font-size: 1.6rem;
+    margin-left: 8px;
+}
+
+.grid{
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+    min-height: 60px;
+}
+
+.grid_datLich{
+    width: 650px;
+    max-width: 100%;
+    margin: 0 auto;
+    border-radius: 1px;
+}
+
+.grid__full-width{
+    width: 100%;
+}
+
+.grid__row{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.grid__column-2-4{
+    padding-left: 12px;
+    padding-right: 12px;
+    width: 25%;
+    padding-top: 6px;
+}
+
+.grid__column-10{
+    padding-left: 12px;
+    padding-right: 12px;
+    width: 83.3334%;
+}
+
+h1{
+    font-weight: 400;
+    color: #333;
+}
+
+/* phần nội dung (container, bảng, v.v.) */
+.container{
+    display: block;
+}
+
+
+/* ==== LAYOUT STICKY FOOTER (ĐÃ SỬA) ==== */
+
+/* đảm bảo chiều cao toàn trang bằng chiều cao màn hình */
+html, body {
+    height: 100%;
+}
+
+/* body là flex container theo cột */
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* .main ôm header + nội dung + footer và cũng là flex container */
+.main {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/* footer nằm cuối .main, auto đẩy xuống đáy */
+.footer {
+    margin-top: auto;
+}
+

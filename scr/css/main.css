@@ -1,0 +1,687 @@
+/* ================= HEADER GỘP GỌN ================= */
+
+.header{
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    height: auto;
+    background-color: #a6a6a6;
+    padding: 8px 0 10px;
+}
+
+
+/* Bố cục chung */
+.header .grid{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 24px;
+}
+
+/* Menu chính bên trái */
+.header__nav{
+    flex: 1.4;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.header__nav--list{
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding-left: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.header--item{
+    position: relative;
+}
+
+/* Link trong menu */
+.header--item .link,
+.header--item > a{
+    display: inline-block;
+    font-size: 1.45rem;
+    color: #233e38;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 4px 6px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    white-space: nowrap; /* không xuống dòng */
+}
+
+/* Hover chung cho các mục menu */
+.header--item .link:hover,
+.header--item > a:hover{
+    background-color: #e67e22;
+    color: #ffffff;
+}
+
+/* ========== DROPDOWN DỊCH VỤ ========== */
+
+.header--item.hang { 
+    position: relative; 
+}
+
+/* Nút Dịch vụ */
+.header--item.hang > .link{
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    background: #a6a6a6;      /* cùng màu header */
+    border-radius: 6px;
+    color: #233e38;
+    font-weight: 500;
+}
+
+/* Mũi tên xổ xuống */
+.header--item.hang > .link::after{
+    content: "";
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    border-left: 2px solid #233e38;
+    border-bottom: 2px solid #233e38;
+    transform: rotate(-45deg);      /* hướng xuống */
+    margin-left: 4px;
+    margin-top: -4px;
+    transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+/* Hover trực tiếp lên nút Dịch vụ */
+.header--item.hang > .link:hover{
+    background: #e67e22;
+    color: #ffffff;
+}
+
+/* Giữ nút Dịch vụ màu cam khi menu đang mở */
+.header--item.hang:hover > .link{
+    background: #e67e22;
+    color: #ffffff;
+}
+
+/* Khi menu mở: mũi tên quay lên, màu trắng */
+.header--item.hang:hover > .link::after{
+    transform: rotate(135deg);
+    border-left-color: #ffffff;
+    border-bottom-color: #ffffff;
+}
+
+/* Menu con Dịch vụ */
+.header--item.hang ul.hang {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #ffffff;
+    padding: 10px 0;
+    list-style: none;
+    width: 200px;
+    border-radius: 12px;
+    display: none;
+    box-shadow: 0px 8px 28px rgba(0,0,0,0.25);
+    overflow: hidden;
+    animation: dropdownFade 0.25s ease;
+    z-index: 999;
+}
+
+.header--item.hang:hover ul.hang { 
+    display: block; 
+}
+
+.hang-link { 
+    text-decoration: none; 
+    display: block;
+}
+
+.hang-con {
+    padding: 12px 18px;
+    font-size: 1.45rem;
+    color: #111;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    transition: 0.25s ease;
+}
+
+.hang-con:hover {
+    background: #fce2e6;
+    color: #c8102e;
+    padding-left: 24px;
+}
+
+/* dấu › trước mỗi dòng trong dropdown */
+.hang-con::before {
+    content: "›";
+    font-weight: bold;
+    color: #000000;
+    opacity: 0.6;
+    transition: 0.25s;
+    font-size: 20px; 
+}
+
+.hang-con:hover::before { 
+    opacity: 1; 
+}
+
+/* Hiệu ứng hiện dropdown */
+@keyframes dropdownFade {
+    from { opacity: 0; transform: translateY(-6px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ========== KHU VỰC SEARCH + HOTLINE ========== */
+
+.header-search{
+    flex: 1.6;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    column-gap: 16px;
+}
+
+/* Logo */
+.header-logo{
+    flex: 0 0 auto;
+}
+
+.header-logo .img{
+    width: 80px;
+    height: auto;
+    border-radius: 6px;
+}
+
+/* Ô tìm kiếm */
+.header_search{
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.search-form{
+    display: flex;
+    width: 100%;
+    max-width: 420px;
+    background-color: #ffffff;
+    border-radius: 999px;
+    overflow: hidden;
+    border: 1px solid #eeeeee;
+}
+
+.search-input{
+    flex: 1;
+    padding: 8px 14px;
+    font-size: 1.4rem;
+    border: none;
+    outline: none;
+}
+
+.search-button{
+    background-color: #e67e22;
+    color: #ffffff;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-button:hover{
+    background-color: #d35400;
+}
+
+/* Hotline */
+.header-hotLine{
+    display: flex;
+    align-items: center;
+    column-gap: 6px;
+}
+
+.phone{
+    margin-top: 0;
+}
+
+.sdt{
+    font-size: 2.0rem;
+    color: #14426c;
+    margin-top: 0;
+    margin-left: 0;
+    font-weight: 600;
+}
+
+/*container*/
+.container{
+    display: flex;
+    margin: auto;
+    width: 1200px;
+    margin-top: 20px;
+    border-radius: 2px;
+}
+/*san pham*/
+.header-product{
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+}
+.xemTatCa{
+    font-size: 1.6rem;
+    align-items: center;
+    line-height: 90px;
+    text-decoration: none;
+    color: rgb(255, 0, 0);
+    margin-right: 12px;
+}
+.xemTatCa:hover{
+    text-decoration: underline;
+}
+.product__item{
+    background-color: white;
+    margin: 20px 0;
+    border: #777;
+}
+.product__item:hover{
+    transform: translateY(-5px);
+    transition: linear 0.1s;
+}
+.product__item--img{
+    height: 235px;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-bottom: #8f8f8f solid 1px;
+}
+
+.product__item--name{
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--text-color);
+    line-height: 2.4rem;
+    margin-left: 12px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    display: flex;
+}
+.product__item--gia--Moi{
+    color: orangered;
+    font-size: 1.8rem;
+}
+.product__item--chiTiet{
+    font-size: 1.6rem;
+    font-weight: 400;
+    display: flex;
+    padding-bottom: 10px;
+}
+
+.product__item--chiTiet--button{
+    line-height: 20px;
+    text-decoration: none;
+    padding: 10px 10px;
+    color: #222222;
+    background-color: rgb(141, 141, 141);
+    margin-left: 63%;
+}
+.product__item--chiTiet--button:hover{
+    font-weight: bold;
+    color: rgb(224, 224, 224);
+    background-color: rgb(0, 0, 0);
+}
+/* Đăng ký, đăng nhập, đặt lịch */
+
+/* ===== FOOTER ===== */
+.footer {
+  background-color: #a6a6a6;
+  color: #233e38;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.4rem;
+  padding: 40px 0 10px;
+  margin-top: 40px;
+}
+
+.footer__container {
+  display: grid;
+  grid-template-columns: 4fr 2fr 2fr 2fr;
+  /* grid-template-areas: 
+  "col1 col2 col3 col4"; */
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer__col {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer__heading {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #233e38;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.footer__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: #233e38;
+}
+
+.footer__list li {
+  margin: 8px 0;
+  display: flex;
+  align-items: center;
+  color: #233e38;
+  transition: color 0.3s ease;
+}
+
+.footer__list li i {
+  margin-right: 8px;
+  font-size: 1.3rem;
+  color: #000;
+}
+
+.footer__link {
+  text-decoration: none;
+  color: #233e38;
+  transition: color 0.3s ease;
+}
+
+.footer__link:hover {
+  color: #000000;
+  text-decoration: underline;
+}
+
+.footer__social {
+  display: flex;
+  align-items: center;
+}
+
+.footer__icon {
+  height: 20px;
+  width: 20px;
+  margin-right: 8px;
+  border-radius: 50%;
+}
+/* Phần bản quyền */
+.footer__bottom {
+  text-align: center;
+  padding-top: 20px;
+  font-size: 1.8rem;
+  color: #233e38;
+}
+.list{
+    text-decoration: none; 
+    color: grey; 
+    margin-right: 15px;
+    font-size: 1.4rem;
+}
+.list:hover{
+    color: #01182a;
+}
+/* ================= HEADER STYLE GIỐNG CELLPHONES ================= */
+
+.header{
+    height: auto;
+    background-color: #a6a6a6; /* đỏ chủ đạo */
+    padding: 8px 0 10px;
+}
+
+/* Bố cục chung */
+.header .grid{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 24px;
+}
+
+/* Menu chính bên trái */
+.header__nav{
+    flex: 1.4;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.header__nav--list{
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding-left: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.header--item{
+    position: relative;
+}
+
+.header--item .link,
+.header--item > a{
+    display: inline-block;
+    font-size: 1.45rem;
+    color: #233e38;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 4px 6px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    white-space: nowrap;         /* trang chủ, đặt lịch, dịch vụ,... ép thành 1 hàng */
+}
+
+.header--item .link:hover,
+.header--item > a:hover{
+    background-color: #e67e22;
+    color: #ffffff;
+}
+
+/* Dropdown Dịch vụ (giữ chức năng cũ) */
+.header__nav--list ul.hang{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #1a1a1a;
+    padding: 4px 0;
+    list-style: none;
+    width: 150px;
+    display: none;
+    margin-left: 0;
+    border-radius: 4px;
+    z-index: 100;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.45);
+}
+
+.header__nav--list li:hover ul.hang{
+    display: block;
+}
+
+.hang-link{
+    display: block;
+    padding: 6px 10px;
+    background: #ffffff;
+}
+
+.hang-con{
+    height: auto;
+    line-height: 1.6;
+}
+
+.hang-link:hover .hang-con,
+.hang-link:hover{
+    background-color: #d6d6d6;
+    color: #ff7700;
+}
+
+/* Khu vực logo + search + hotline bên phải */
+.header-search{
+    flex: 1.6;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    column-gap: 16px;
+}
+
+/* Logo */
+.header-logo{
+    flex: 0 0 auto;
+}
+
+.header-logo .img{
+    width: 80px;
+    height: auto;
+    border-radius: 6px;
+}
+
+/* Ô tìm kiếm giống style thanh trắng trên nền đỏ */
+.header_search{
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.search-form{
+    display: flex;
+    width: 100%;
+    max-width: 420px;
+    background-color: #ffffff;
+    border-radius: 999px;
+    overflow: hidden;
+    border: 1px solid #eeeeee;
+}
+
+.search-input{
+    flex: 1;
+    padding: 8px 14px;
+    font-size: 1.4rem;
+    border: none;
+    outline: none;
+}
+
+.search-button{
+    background-color: #e67e22;
+    color: #ffffff;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 14px;
+    cursor: pointer;
+}
+
+.search-button:hover{
+    background-color: #d35400;
+}
+
+/* Hotline */
+.header-hotLine{
+    display: flex;
+    align-items: center;
+    column-gap: 6px;
+}
+
+.phone{
+    margin-top: 0;
+}
+
+.sdt{
+    font-size: 2.0rem;
+    color: #14426c;
+    margin-top: 0;
+    margin-left: 0;
+    font-weight: 600;
+}
+
+/* ================= DROPDOWN DỊCH VỤ ĐẸP HƠN ================ */
+.header--item.hang { position: relative; }
+
+/* NÚT DỊCH VỤ: HÌNH CHỮ NHẬT ĐỎ + MŨI TÊN */
+.header--item.hang > .link{
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    background: #a6a6a6;      /* đỏ tươi */
+    border-radius: 6px;       /* bo nhẹ giống Trang chủ */
+    color: #233e38;
+    font-weight: 500;
+    
+}
+
+/* Mũi tên xổ xuống */
+.header--item.hang > .link::after{
+    content: "";
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    border-left: 2px solid #233e38;
+    border-bottom: 2px solid #233e38;
+    transform: rotate(-45deg);      /* hướng xuống */
+    margin-left: 4px;
+    margin-top: -4px;
+    transition: transform 0.25s ease;
+}
+/* Giữ nút Dịch vụ màu cam khi menu đang mở */
+.header--item.hang:hover > .link{
+    background: #e67e22;
+    color: #ffffff;
+}
+
+/* Khi menu mở: mũi tên quay lên, màu trắng */
+.header--item.hang:hover > .link::after{
+    transform: rotate(135deg);
+    border-left-color: #ffffff;
+    border-bottom-color: #ffffff;
+}
+
+/* Menu con Dịch vụ */
+.header--item.hang ul.hang {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #ffffff;
+    padding: 10px 0;
+    list-style: none;
+    width: 200px;
+    border-radius: 12px;
+    display: none;
+    box-shadow: 0px 8px 28px rgba(0,0,0,0.25);
+    overflow: hidden;
+    animation: dropdownFade 0.25s ease;
+    z-index: 999;
+}
+.header--item.hang:hover ul.hang { display: block; }
+
+.hang-link { text-decoration: none; }
+.hang-con {
+    padding: 8px 14px;
+    font-size: 1.3rem;
+    color: #111;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 600;
+    transition: 0.25s ease;
+}
+.hang-con:hover {
+    background: #fce2e6;
+    color: #c8102e;
+    padding-left: 24px;
+}
+.hang-con::before {
+    content: "›";
+    font-weight: bold;
+    color: #000000;
+    opacity: 0.5;
+    transition: 0.25s;
+    font-size: 16px; 
+}
+.hang-con:hover::before { opacity: 1; }
+
+@keyframes dropdownFade {
+    from { opacity: 0; transform: translateY(-6px); }
+    to { opacity: 1; transform: translateY(0); }
+}

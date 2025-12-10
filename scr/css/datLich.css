@@ -1,0 +1,115 @@
+.mb-3{
+    margin: 20px 10px;
+}
+.form-label{
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+.khung{
+    background-color: #e2e2e2;
+    margin-top: 20px;
+    border: 1px solid #333;     /* viền */
+    border-radius: 8px;          /* bo góc */
+    padding: 10px;               /* đẩy form cách viền cho đẹp */
+}
+.form-select{
+    display: block;
+    width: 100%;
+    padding: .375rem 2.25rem .375rem .75rem;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 2rem;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-repeat: no-repeat;
+    background-position: right .75rem center;
+    background-size: 16px 12px;
+    border: 1px solid #333;
+    border-radius: 4px;
+}
+select:disabled{
+    color: rgb(0, 0, 0);
+}
+.form_dat_lich{
+    width: 500px;
+    height: 750px;
+
+}
+.form-control{
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.5rem;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-clip: padding-box;
+    border: 1px solid #333;
+    border-radius: 4px;
+}
+.btn{
+    width: 96%;
+    height: 40px;
+    background: #186d2b;
+    color: rgb(255, 255, 255);
+    font-size: 1.6rem;
+    border: none;
+    margin-right: 80px;
+    border-radius: 4px;
+    display: block;
+    margin: 0 auto;
+    
+}
+.btn:hover{
+    color: #fff;
+    background: #218838;
+}
+h2{
+    font-size: 2.5rem;
+}
+table{
+    margin-top: 20px;
+    border-collapse: collapse;
+    width: 100%;
+}
+table, tr, th, td{
+    border: 1px solid #000000;
+    font-size: 1.6rem;
+    padding: 10px;
+    text-align: center;
+}
+.thaotac{
+    background: #10c7ff;
+    color: rgb(39, 39, 39);
+    padding: 6px;
+    border-radius: 3px;
+    text-decoration: none;
+    border: 1px solid rgb(255, 255, 255);
+}
+.thaotac:hover{
+    border: 1px solid #000000;
+    background: #fff;
+    color: #000000;
+    padding: 6px;
+    border-radius: 3px;
+    text-decoration: none;
+}
+.thaotachuy{
+    background: #ff1e00;
+    color: rgb(0, 0, 0);
+    padding: 6px;
+    border-radius: 3px;
+    text-decoration: none;
+    border: 1px solid rgb(255, 255, 255);
+}
+.thaotachuy:hover{
+    border: 1px solid #000000;
+    background: #fff;
+    color: #000000;
+    padding: 6px;
+    border-radius: 3px;
+    text-decoration: none;
+}
