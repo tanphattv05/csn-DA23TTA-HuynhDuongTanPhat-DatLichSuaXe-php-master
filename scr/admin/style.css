@@ -28,12 +28,20 @@ body{
     z-index: 100;
     height: 64px;
     padding: 0 2.4rem;
+
+    /* sát sidebar 240px */
+    margin-left: 240px;
+    width: calc(100% - 240px);
+
     background: linear-gradient(90deg, #4e73df, #4e73df);
     color: #fbf9f9;
     display: flex;
     align-items: center;
     justify-content: space-between;
     box-shadow: 0 10px 25px rgba(15, 23, 42, 0.4);
+
+    /* không bo góc */
+    border-radius: 0;
 }
 
 .admin-header__left{
@@ -104,24 +112,24 @@ body{
 .admin-content{
     display: block;
     max-width: 100%;
-    /* chừa chỗ cho sidebar 240px + khoảng cách 2.4rem bên phải */
+    /* chừa chỗ cho sidebar 240px + khoảng cách bên phải */
     margin: 2.4rem 2.4rem 2.4rem 260px;
     padding: 0 2.4rem 2.4rem 0;
     position: relative;
 }
 
-/* SIDEBAR CỐ ĐỊNH BÊN TRÁI – KIỂU SB ADMIN 2 */
+/* SIDEBAR CỐ ĐỊNH BÊN TRÁI – CHẠY TỪ TRÊN XUỐNG */
 .admin-contentleft{
     position: fixed;
-    top: 64px; /* đúng bằng chiều cao header */
+    top: 0;
     left: 0;
     width: 240px;
     min-width: 240px;
-    height: calc(100vh - 64px); /* full chiều cao dưới header */
+    height: 100vh;
     background: #4e73df;
     border-radius: 0;
     padding: 1.8rem 1.4rem;
-    color: #e5e7eb;
+    color: #6e8cc9;
     box-shadow: 0 0 0 rgba(0,0,0,0);
     overflow-y: auto;
     z-index: 10;
@@ -321,9 +329,14 @@ body{
     flex-direction: column;
 }
 
-/* Footer */
+/* ===== FOOTER ===== */
 .footerAdmin{
     margin-top: auto;
+
+    /* sát sidebar, giống header */
+    margin-left: 240px;
+    width: calc(100% - 240px);
+
     background: #ffffff;
     color: #9ca3af;
     display: flex;
@@ -332,6 +345,9 @@ body{
     height: 72px;
     font-size: 1.3rem;
     box-shadow: 0 -10px 25px rgba(15, 23, 42, 0.6);
+
+    /* không bo góc */
+    border-radius: 0;
 }
 
 .footerAdmin_font{
@@ -364,6 +380,19 @@ body{
 
     .admin-contentRight{
         margin-left: 0;
+    }
+
+    /* header & footer full width trên mobile */
+    .admin-header{
+        margin-left: 0;
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .footerAdmin{
+        margin-left: 0;
+        width: 100%;
+        border-radius: 0;
     }
 }
 
