@@ -21,8 +21,6 @@ if (!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== tru
 <body>
     <header class="admin-header">
         <div class="admin-header__left">
-            <div class="admin-logo"><span>Đặt Lịch Sửa Xe</span></div>
-            <span class="admin-header__title">Hệ thống quản trị</span>
         </div>
         <div class="admin-header__right">
 <?php if (isset($_SESSION['admin_username'])): ?>

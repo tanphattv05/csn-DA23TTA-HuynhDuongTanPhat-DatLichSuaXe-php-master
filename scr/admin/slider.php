@@ -1,7 +1,8 @@
 <section class="admin-content">
     <div class="admin-contentleft">
+    <div class="admin-sidebar-brand">Đặt Lịch Sửa Xe</div>
         <ul>
-            <li>Hãng xe
+            <li >Hãng xe
                 <ul>
                     <li><a href="categoryadd.php">Thêm hãng xe</a></li>
                     <li><a href="categoryList.php">Danh sách hãng xe</a></li>
