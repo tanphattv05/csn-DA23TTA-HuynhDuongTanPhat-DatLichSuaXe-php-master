@@ -252,8 +252,7 @@ body{
   text-align:left;
   border-bottom:1px solid var(--line);
 }
-.admin-contentRight tr:nth-child(even){background:#f9fafb;}
-.admin-contentRight tr:hover{background:#eef2ff;}
+.admin-contentRight tr:hover{background:#f9fafb;}
 
 .admin-contentRight td a{
   display:inline-flex;
@@ -312,4 +311,32 @@ body{
   .admin-header__title{display:none;}
   .admin-header__right{width:100%;justify-content:flex-end;}
   .admin-contentRight > div{padding:1.6rem 1.4rem;}
+}
+/* ===== VẼ KHUNG CHO BẢNG (GHI ĐÈ) ===== */
+
+/* 1) Khung bao ngoài bảng */
+.admin-contentRight table{
+  border: 1px solid #e5e7eb;      /* viền ngoài */
+  border-radius: 12px ;            /* bo góc */
+  overflow: hidden;               /* để bo góc ăn vào thead */
+  background: #fff;
+}
+
+/* 2) Vẽ đường kẻ dọc + ngang cho từng ô */
+.admin-contentRight th,
+.admin-contentRight td{
+  border-right: 1px solid #a6a6a6; /* kẻ dọc */
+  border-bottom: 1px solid #a6a6a6;/* kẻ ngang */
+}
+
+/* bỏ đường kẻ d*
+/* ===== FIX: VIỀN NGOÀI CHO BẢNG ===== */
+.admin-contentRight table{
+  border-collapse: collapse;      /* giữ như bạn đang dùng */
+  border: 1px solid #e5e7eb;      /* viền ngoài */
+  outline: 1px solid #a6a6a6;     /* đảm bảo luôn thấy viền ngoài */
+  outline-offset: -1px;           /* dính sát vào bảng */
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
 }
