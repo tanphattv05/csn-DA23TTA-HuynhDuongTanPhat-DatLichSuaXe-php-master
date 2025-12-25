@@ -81,7 +81,7 @@ if (session_status() === PHP_SESSION_NONE) {
                             </ul>
                         </li>
                         <li class="header--item"><a class="link" href="datLich.php">Đặt lịch</a></li>
-                        <li class="header--item"><a class="link" href="lsBaoDuong.php">Lịch sử bảo dưỡng</a></li>
+                        <li class="header--item"><a class="link" href="lsBaoDuong.php">Lịch sử đặt lịch</a></li>
                         <li class="header--item"><a class="link" href="lienHe.php">Liên hệ</a></li>
                     </ul>
                 </nav>

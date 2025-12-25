@@ -47,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 font-size: 30px;
                 font-weight: 900; 
                 text-align:center; 
-                margin-top:50px;">Sửa dịch vụ</div>
+                margin-top:50px;">Sửa lịch đặt</div>
             </div>
             <!-- Họ và Tên -->
             <div class="mb-3">
@@ -162,7 +162,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             <!-- Nút đặt lịch -->
             <div class="d-grid">
-                <button type="submit" class="btn btn-success">Sửa dịch vụ</button>
+                <button type="submit" class="btn btn-success">Sửa</button>
             </div>
         </form>
     </div>
