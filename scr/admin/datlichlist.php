@@ -18,8 +18,8 @@ $show_datlich = $product->show_datLich();
             <th>Biển số xe</th>
             <th>Hãng xe</th>
             <th>Mẫu xe</th>
-            <th>Dịch vụ bảo dưỡng</th>
-            <th>Ngày bảo dưỡng</th>
+            <th>Dịch vụ</th>
+            <th>Ngày sửa chữa</th>
             <th>Giá dịch vụ</th>
         </tr>
         <?php

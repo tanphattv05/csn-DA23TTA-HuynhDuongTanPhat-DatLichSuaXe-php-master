@@ -19,7 +19,7 @@ if ($get_datlich) {
 
     // Chỉ cho phép sửa lịch của chính tài khoản đang đăng nhập
     if (!isset($_SESSION['user']['id']) || $resultdl['user_id'] != $_SESSION['user']['id']) {
-        header("Location: lsBaoDuong.php");
+        header("Location: lsSuaChua.php");
         exit();
     }
 }
@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $product_id = $_POST['product_id'];
     $ngaybd = $_POST['ngaybd'];
     $product_price = $_POST['product_price'];
-    $update_lichBaoDuong = $product->update_lichBaoDuong($datlich_id, $hoten, $sdt, $biensoxe, $category_id, $brand_id, $product_id, $ngaybd, $product_price);
+    $update_lichSuaChua = $product->update_lichSuaChua($datlich_id, $hoten, $sdt, $biensoxe, $category_id, $brand_id, $product_id, $ngaybd, $product_price);
 }
 ?>
 

@@ -18,9 +18,9 @@
                 <th>Dịch vụ</th>
                 <th>Hãng xe</th>
                 <th>Mẫu xe</th>
-                <th>Giá</th>
-                <th>Thời gian bảo dưỡng</th>
-                <th>Vật tư bảo dưỡng</th>
+                <th>Chi phí</th>
+                <th>Thời gian sửa chữa</th>
+                <th>Phụ tùng</th>
                 <th>Hình ảnh</th>
                 <th>Thao tác</th>
             </tr>
@@ -36,7 +36,7 @@
                             <td><?php echo $result['brand_name'] ?></td>                        
                             <td><?php echo $result['product_price'] ?></td>
                             <td><?php echo $result['product_time'] ?></td>
-                            <td><?php echo $result['product_vatTu'] ?></td>
+                            <td><?php echo $result['product_phuTung'] ?></td>
                             <td><img src="<?php echo $result['product_imgad'] ?>" alt=""></td>
                             <td><a href="productEdit.php?product_id=<?php echo $result['product_id'] ?>">Sửa</a>/<a href="productDelete.php?product_id=<?php echo $result['product_id'] ?>">Xóa</a></td>
                         </tr>

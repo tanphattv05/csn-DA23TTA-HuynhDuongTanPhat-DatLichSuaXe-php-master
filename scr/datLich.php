@@ -13,7 +13,7 @@ include "copy_productClass.php";
 <?php
 $product = new product;
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $insert_lichBaoDuong = $product->insert_lichBaoDuong($_POST);
+    $insert_lichSuaChua = $product->insert_lichSuaChua($_POST);
 }
 ?>
 <div class="grid_datLich">

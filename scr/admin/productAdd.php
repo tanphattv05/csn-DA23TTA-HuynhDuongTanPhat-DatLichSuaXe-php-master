@@ -40,9 +40,9 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
 
             </select>
             <input name="product_price" require type="text" placeholder="Giá dịch vụ">
-            <input name="product_time" require type="text" placeholder="Thời gian bảo dưỡng">
-            <input name="product_vatTu" require type="text" placeholder="Tên vật tư bảo dưỡng">
-            <label for="">Ảnh sản phẩm(Chỉ chọn file jgp, png, jpeg,jfif!)</label>
+            <input name="product_time" require type="text" placeholder="Thời gian sửa chữa">
+            <input name="product_phuTung" require type="text" placeholder="Phụ tùng">
+            <label for="">Ảnh sản phẩm(Chỉ chọn file jgp, png, webp)</label>
             <input name="product_img" require type="file" style="margin-top: 10px; padding-top:0; ">
             <button type="submit">Thêm</button>
         </form>

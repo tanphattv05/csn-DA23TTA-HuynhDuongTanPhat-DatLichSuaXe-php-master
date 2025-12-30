@@ -29,7 +29,7 @@ $db->connectDB();
                                     <p class="service-price">Giá: <?php echo $row['product_price']; ?> VNĐ</p>
                                     <p style="color: #000;" class="service-price">Thời gian sửa chữa: <?php echo $row['product_time']; ?> phút</p>
                                     <p style="color: #e67e22;" class="service-price">Mẫu xe: <?php echo $row['brand_name']; ?></p>
-                                    <p style="color: #333;" class="service-price">Phụ tùng: <?php echo $row['product_vatTu']; ?></p>
+                                    <p style="color: #333;" class="service-price">Phụ tùng: <?php echo $row['product_phuTung']; ?></p>
                                     <div class="service-buttons">
                                         <!-- <button class="service-button book-now"><a href="datLich.php" style="text-decoration: none; color: white;">Đặt Lịch</a></button> -->
                                         <a href="datLich.php" class="service-button book-now" style="text-decoration: none; color: white; height: 100%; width:100%;">Đặt Lịch</a>
@@ -69,7 +69,7 @@ $db->connectDB();
                                     <p class="service-price">Giá: <?php echo $row['product_price']; ?> VNĐ</p>
                                     <p style="color: #000;" class="service-price">Thời gian sửa chữa: <?php echo $row['product_time']; ?> phút</p>
                                     <p style="color: #e67e22;" class="service-price">Mẫu xe: <?php echo $row['brand_name']; ?></p>
-                                    <p style="color: #333;" class="service-price">Phụ tùng: <?php echo $row['product_vatTu']; ?></p>
+                                    <p style="color: #333;" class="service-price">Phụ tùng: <?php echo $row['product_phuTung']; ?></p>
                                     <div class="service-buttons">
                                         <a href="datLich.php" class="service-button book-now" style="text-decoration: none; color: white; height: 100%; width:100%;">Đặt Lịch</a>
                                         <!-- <button class="service-button view-details" onclick="viewDetails()">Xem Chi Tiết</button> -->
@@ -110,7 +110,7 @@ $db->connectDB();
                                     <p class="service-price">Giá: <?php echo $row['product_price']; ?> VNĐ</p>
                                     <p style="color: #000;" class="service-price">Thời gian sửa chữa: <?php echo $row['product_time']; ?> phút</p>
                                     <p style="color: #e67e22;" class="service-price">Mẫu xe: <?php echo $row['brand_name']; ?></p>
-                                    <p style="color: #333;" class="service-price">Phụ tùng: <?php echo $row['product_vatTu']; ?></p>
+                                    <p style="color: #333;" class="service-price">Phụ tùng: <?php echo $row['product_phuTung']; ?></p>
                                     <div class="service-buttons">
                                         <a href="datLich.php" class="service-button book-now" style="text-decoration: none; color: white; height: 100%; width:100%;">Đặt Lịch</a>
                                         <!-- <button class="service-button view-details" onclick="viewDetails()">Xem Chi Tiết</button> -->

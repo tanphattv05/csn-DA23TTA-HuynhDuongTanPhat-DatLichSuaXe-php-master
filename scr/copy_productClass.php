@@ -52,7 +52,7 @@ class product
         $result = $this->db->select($query);
         return $result;
     }
-    public function insert_lichBaoDuong()
+    public function insert_lichSuaChua()
     {
         if (session_status() === PHP_SESSION_NONE) {
             session_start();
@@ -75,7 +75,7 @@ class product
         }
         $query = "INSERT INTO tbl_datlich (user_id, hoten, sdt, biensoxe, category_id, brand_id, product_id, ngaybd, product_price) 
             VALUES ('$user_id', '$hoten', '$sdt', '$biensoxe', '$category_id', '$brand_id', '$product_id', '$ngaybd', '$product_price')";
-        echo '<script>window.location.href = "lsBaoDuong.php";</script>';
+        echo '<script>window.location.href = "lsSuaChua.php";</script>';
         return $this->db->insert($query);
     }
     public function insert_lienhe()
@@ -213,7 +213,7 @@ public function get_datlich($datlich_id)
         $result = $this->db->select($query);
         return $result;
     }
-    public function update_lichBaoDuong($datlich_id, $hoten, $sdt, $biensoxe, $category_id, $brand_id, $product_id, $ngaybd, $product_price)
+    public function update_lichSuaChua($datlich_id, $hoten, $sdt, $biensoxe, $category_id, $brand_id, $product_id, $ngaybd, $product_price)
     {
         $query = "
                 UPDATE tbl_datlich 
@@ -230,7 +230,7 @@ public function get_datlich($datlich_id)
                     datlich_id = '$datlich_id'
             ";
         $result = $this->db->update($query);
-        echo '<script>window.location.href = "lsBaoDuong.php";</script>';
+        echo '<script>window.location.href = "lsSuaChua.php";</script>';
         return $result;
     }
     public function delete_datlich($datlich_id)

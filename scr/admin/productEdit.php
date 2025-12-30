@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
     $brand_id = $_POST['brand_id'];
     $product_price = $_POST['product_price'];
     $product_time = $_POST['product_time'];
-    $product_vatTu = $_POST['product_vatTu'];
+    $product_phuTung = $_POST['product_phuTung'];
 
     // Lấy ảnh cũ từ cơ sở dữ liệu
     $get_product = $product->get_product($product_id);
@@ -66,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
         $brand_id,
         $product_price,
         $product_time,
-        $product_vatTu,
+        $product_phuTung,
         $product_img
     );
 }
@@ -113,7 +113,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
             </select>
             <input name="product_price" require type="text" value="<?php echo $resulta['product_price'] ?>">
             <input name="product_time" require type="text" value="<?php echo $resulta['product_time'] ?>">
-            <input name="product_vatTu" require type="text" value="<?php echo $resulta['product_vatTu'] ?>">
+            <input name="product_phuTung" require type="text" value="<?php echo $resulta['product_phuTung'] ?>">
             <label for="">Ảnh sản phẩm <span style="color: red;">*</span></label>
             <input type="hidden" value="<?php echo $resulta['product_imgad'] ?>" name="product_img">
             <input name="product_img" require type="file">

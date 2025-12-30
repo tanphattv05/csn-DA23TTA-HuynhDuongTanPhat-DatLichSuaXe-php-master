@@ -12,7 +12,7 @@ $product = new product;
 
 $datlich_id = $_GET['datlich_id'] ?? null;
 if ($datlich_id === null) {
-    header('Location: lsBaoDuong.php');
+    header('Location: lsSuaChua.php');
     exit();
 }
 
@@ -21,12 +21,12 @@ $get_datlich = $product->get_datlich($datlich_id);
 if ($get_datlich) {
     $resultdl = $get_datlich->fetch_assoc();
     if (!isset($_SESSION['user']['id']) || $resultdl['user_id'] != $_SESSION['user']['id']) {
-        header('Location: lsBaoDuong.php');
+        header('Location: lsSuaChua.php');
         exit();
     }
 }
 
 $delete_datlich = $product->delete_datlich($datlich_id);
-header('Location: lsBaoDuong.php');
+header('Location: lsSuaChua.php');
 exit();
 ?>

@@ -33,7 +33,7 @@
             $brand_id = $_POST['brand_id'];
             $product_price = $_POST['product_price'];
             $product_time = $_POST['product_time'];
-            $product_vatTu = $_POST['product_vatTu'];
+            $product_phuTung = $_POST['product_phuTung'];
             $product_img = $_FILES['product_img']['name'];
             $urlImages = "uploads/".$_FILES['product_img']['name'];
             $urlImagesad = "imgad/".$_FILES['product_img']['name'];
@@ -46,8 +46,8 @@
             return $alert;
             }else{
                 
-                $query = "INSERT INTO tbl_product (product_name,category_id,brand_id,product_price,product_time,product_vatTu,product_img,product_imgad)
-                VALUES ('$product_name', '$category_id', '$brand_id', '$product_price', '$product_time', '$product_vatTu', '$urlImages','$urlImagesad')";
+                $query = "INSERT INTO tbl_product (product_name,category_id,brand_id,product_price,product_time,product_phuTung,product_img,product_imgad)
+                VALUES ('$product_name', '$category_id', '$brand_id', '$product_price', '$product_time', '$product_phuTung', '$urlImages','$urlImagesad')";
                 // header('Location:productlist.php');
                 return $this->db->insert($query);                    
             }       
@@ -69,7 +69,7 @@
             $result = $this->db->select($query);
             return $result;
         }
-        public function update_product($product_id, $product_name, $category_id, $brand_id, $product_price, $product_time, $product_vatTu, $product_img) {
+        public function update_product($product_id, $product_name, $category_id, $brand_id, $product_price, $product_time, $product_phuTung, $product_img) {
             $query = "
                 UPDATE tbl_product 
                 SET 
@@ -78,7 +78,7 @@
                     brand_id = $brand_id,
                     product_price = '$product_price',
                     product_time = '$product_time',
-                    product_vatTu = '$product_vatTu',
+                    product_phuTung = '$product_phuTung',
                     product_img = '$product_img',
                     product_imgad = '$product_img'
                 WHERE 

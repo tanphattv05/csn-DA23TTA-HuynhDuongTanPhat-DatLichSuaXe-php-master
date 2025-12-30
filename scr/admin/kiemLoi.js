@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (input.name === "product_time" && isNaN(value)) {
                 isValid = false;
-                alert("Thời gian bảo dưỡng phải là một số hợp lệ");
+                alert("Thời gian sửa chữa phải là một số hợp lệ");
                 input.focus();
                 return false;
             }
