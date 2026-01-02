@@ -99,40 +99,85 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </div>
 </div>
 <script>
-    /*Bắt sự kiện */
-    $(document).ready(function() {
-        $("#category_id").change(function() {
-            // alert($(this).val())
-            var x = $(this).val();
-            $.get("ajax.php", {
-                category_id: x
-            }, function(data) {
-                $("#brand_id").html('<option value="" disabled selected>Chọn mẫu xe</option>');
-                $("#brand_id").append(data);
-            })
+(function(){
+  function getParam(name){
+    try{
+      return new URL(window.location.href).searchParams.get(name);
+    }catch(e){
+      return null;
+    }
+  }
+
+  function loadBrands(categoryId, selectedBrandId){
+    return $.get("ajax.php", { category_id: categoryId }, function(html){
+      $("#brand_id")
+        .html('<option value="" disabled selected>Chọn mẫu xe</option>')
+        .append(html);
+      if (selectedBrandId) $("#brand_id").val(selectedBrandId);
+    });
+  }
+
+  function loadProducts(brandId, selectedProductId){
+    return $.get("ajax.php", { brand_id: brandId }, function(html){
+      $("#product_id")
+        .html('<option value="" disabled selected>Chọn dịch vụ</option>')
+        .append(html);
+      if (selectedProductId) $("#product_id").val(selectedProductId);
+    });
+  }
+
+  function loadPrice(productId){
+    return $.get("ajax.php", { product_id: productId }, function(html){
+      $("#product_price").html(html);
+    });
+  }
+
+  $(function(){
+
+    // 1) Cascading selects (bình thường)
+    $("#category_id").on("change", function(){
+      const categoryId = $(this).val();
+      $("#brand_id").html('<option value="" disabled selected>Chọn mẫu xe</option>');
+      $("#product_id").html('<option value="" disabled selected>Chọn dịch vụ</option>');
+      $("#product_price").html('');
+      if (!categoryId) return;
+      loadBrands(categoryId, null);
+    });
+
+    $("#brand_id").on("change", function(){
+      const brandId = $(this).val();
+      $("#product_id").html('<option value="" disabled selected>Chọn dịch vụ</option>');
+      $("#product_price").html('');
+      if (!brandId) return;
+      loadProducts(brandId, null);
+    });
+
+    $("#product_id").on("change", function(){
+      const productId = $(this).val();
+      if (!productId){ $("#product_price").html(''); return; }
+      loadPrice(productId);
+    });
+
+    // 2) Prefill: tự chọn sẵn theo link datLich.php?category_id=...&brand_id=...&product_id=...
+    const preCategory = getParam("category_id");
+    const preBrand    = getParam("brand_id");
+    const preProduct  = getParam("product_id");
+
+    if (preCategory){
+      $("#category_id").val(preCategory);
+
+      loadBrands(preCategory, preBrand)
+        .then(function(){
+          if (!preBrand) return;
+          return loadProducts(preBrand, preProduct);
         })
-    })
-    $(document).ready(function() {
-        $("#brand_id").change(function() {
-            var x = $(this).val();
-            $.get("ajax.php", {
-                brand_id: x
-            }, function(data) {
-                $("#product_id").html('<option value="" disabled selected>Chọn dịch vụ</option>');
-                $("#product_id").append(data);
-            })
-        })
-    })
-    $(document).ready(function() {
-        $("#product_id").change(function() {
-            var x = $(this).val();
-            $.get("ajax.php", {
-                product_id: x
-            }, function(data) {
-                $("#product_price").html(data)
-            })
-        })
-    })
+        .then(function(){
+          if (!preProduct) return;
+          return loadPrice(preProduct);
+        });
+    }
+  });
+})();
 </script>
 <?php
 include "footer.php";

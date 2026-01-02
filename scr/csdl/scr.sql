@@ -185,7 +185,7 @@ CREATE TABLE `tbl_datlich` (
   `brand_id`      INT(11) DEFAULT NULL,   -- ✅
   `product_id`    INT(11) DEFAULT NULL,   -- ✅
   `ngaybd`        DATE NOT NULL,
-  `product_price` INT(11) NOT NULL,       -- ✅ đổi từ varchar -> INT
+  `product_price` VARCHAR(11) NOT NULL,       
   PRIMARY KEY (`datlich_id`),
   KEY `idx_dl_product` (`product_id`),
   KEY `idx_dl_cat_brand` (`category_id`,`brand_id`),
@@ -209,8 +209,8 @@ CREATE TABLE `tbl_datlich` (
 
 INSERT INTO `tbl_datlich`
 (`datlich_id`, `user_id`, `hoten`, `sdt`, `biensoxe`, `category_id`, `brand_id`, `product_id`, `ngaybd`, `product_price`) VALUES
-(14, NULL, 'Huỳnh Dương Tấn Phát', '0394340411', '84K5-7788', 11, 28, 70, '2024-12-29', 150000),
-(22, NULL, 'Huỳnh Dương Tấn Phát', '0394340411', '84K5-7788', 19, 12, 57, '2025-01-05', 400000),
-(23, NULL, 'Huỳnh Dương Tấn Phát', '0394340411', '84K5-7788', 19, 18, 73, '2025-01-29', 150000);
+(14, NULL, 'Huỳnh Dương Tấn Phát', '0394340411', '84K5-7788', 11, 28, 70, '2024-12-29', 150.000),
+(22, NULL, 'Huỳnh Dương Tấn Phát', '0394340411', '84K5-7788', 19, 12, 57, '2025-01-05', 400.000),
+(23, NULL, 'Huỳnh Dương Tấn Phát', '0394340411', '84K5-7788', 19, 18, 73, '2025-01-29', 150.000);
 
 COMMIT;

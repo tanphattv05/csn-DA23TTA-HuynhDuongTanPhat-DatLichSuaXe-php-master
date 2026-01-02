@@ -40,7 +40,7 @@ $result = $conn->query($sql);
                             <p class="service-price">Giá: <?php echo $row['product_price']; ?> VNĐ</p>
                             <p style="color: #000;" class="service-price">Thời gian bảo dưỡng: <?php echo $row['product_time']; ?> phút</p>
                             <p style="color: #e67e22;" class="service-price">Mẫu xe: <?php echo $row['brand_name']; ?></p>
-                            <p style="color: #333;" class="service-price">Vật tư: <?php echo $row['product_vatTu']; ?></p>
+                            <p style="color: #333;" class="service-price">Phụ tùng <?php echo $row['product_phuTung']; ?></p>
                             <div class="service-buttons">
                                 <button class="service-button book-now" onclick="bookService()">Đặt Lịch</button>
                             </div>
