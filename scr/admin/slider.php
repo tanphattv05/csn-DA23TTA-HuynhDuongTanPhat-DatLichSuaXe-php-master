@@ -35,6 +35,8 @@
                     <li><a href="lienhead.php">Danh sách liên hệ</a></li>
                 </ul>
             </li>
-            <!-- <li><a href="../index.php">Chuyển đến giao diện người dùng</a></li> -->
-        </ul>
+            <li>Người dùng
+                <ul>
+                    <li><a href="../index.php">Về trang người dùng</a></li>
+                </ul>
     </div>
