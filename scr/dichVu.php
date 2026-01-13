@@ -5,7 +5,7 @@ require_once('../scr/admin/database.php');
 $db = new Database;
 $db->connectDB();
 ?>
-<h1 style="background:#FFF; text-align:center;font-size:5rem; color:#e67e22">Dịch vụ sửa chữa</h1>
+<h1 style="background:#FFF; text-align:center;font-size:5rem; color:#0000FF">Dịch vụ sửa chữa</h1>
 <div class="container">
     <div class="honda" id="honda">
         <div class="grid">
